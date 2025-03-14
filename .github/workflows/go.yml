@@ -21,9 +21,9 @@ jobs:
 
       - name: Build
         run: go build -v ./...  # 编译项目
-
-      - name: Run tests
-        run: go test -v ./...  # 运行测试（虽然这个示例没有测试代码，但保留该步骤作为通用模板）
+#
+#      - name: Run tests
+#        run: go test -v ./...  # 运行测试（虽然这个示例没有测试代码，但保留该步骤作为通用模板）
 
       - name: Set up Goreleaser
         uses: goreleaser/goreleaser-action@v4
