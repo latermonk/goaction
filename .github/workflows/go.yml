@@ -22,15 +22,28 @@ jobs:
       - name: Build
         run: go build -v ./...  # 编译项目
 
-      - name: Set up Goreleaser
-        uses: goreleaser/goreleaser-action@v4
+#      - name: Set up Goreleaser
+#        uses: goreleaser/goreleaser-action@v4
+#        with:
+#          version: latest
+#          tag_name: v0.1.0
+#          distribution: goreleaser
+#          args: release   # 移除 --snapshot 标志
+#        env:
+#          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+
+
+      - name: Create Release
+        id: create_release
+        uses: actions/create-release@v1
         with:
-          version: latest
-          tag_name: v0.1.0
-          distribution: goreleaser
-          args: release   # 移除 --snapshot 标志
+          tag_name: v0.1.0  # 使用推送的标签名
+          release_name: "Release ${{ github.ref_name }}"
+          body: "自动发布的 Release 版本"  # 可自定义或从文件读取
+          draft: false  # 是否为草稿
+          prerelease: false  # 是否为预发布
         env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}  # 默认权限令牌
 
       - name: Run Hello World
         run: go run main.go  # 运行 Hello World 程序
