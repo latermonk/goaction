@@ -26,8 +26,9 @@ jobs:
         uses: goreleaser/goreleaser-action@v4
         with:
           version: latest
+          tag_name: v0.1.0
           distribution: goreleaser
-          args: release  # 移除 --snapshot 标志
+          args: release   # 移除 --snapshot 标志
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
