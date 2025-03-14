@@ -27,7 +27,7 @@ jobs:
         with:
           version: latest
           distribution: goreleaser
-          args: release --rm-dist  # 添加 args 参数指定 goreleaser 的命令
+          args: release  # 添加 args 参数指定 goreleaser 的命令
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
