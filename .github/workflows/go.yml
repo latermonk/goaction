@@ -27,7 +27,7 @@ jobs:
         with:
           version: latest
           distribution: goreleaser
-          args: release --snapshot  # 修改 args 参数以包含 --snapshot
+          args: release  # 移除 --snapshot 标志
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
