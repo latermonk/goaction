@@ -1,2 +1,2 @@
 # goaction
-Go !!!  Y 
+Go !!!  Y X  
