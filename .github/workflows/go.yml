@@ -9,6 +9,9 @@ on:
 jobs:
   build:
     runs-on: ubuntu-latest  # 使用最新的 Ubuntu 系统作为运行环境
+    # 添加权限配置
+    permissions:
+      contents: write  # 允许写入仓库内容
 
     steps:
       - name: Checkout code
